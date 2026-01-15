@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm Pongal Festival Palette */
+    --background: 45 100% 98%;
+    --foreground: 25 60% 15%;
+
+    --card: 45 80% 96%;
+    --card-foreground: 25 60% 15%;
+
+    --popover: 45 100% 98%;
+    --popover-foreground: 25 60% 15%;
+
+    /* Saffron Gold - Primary */
+    --primary: 38 92% 50%;
+    --primary-foreground: 45 100% 98%;
+
+    /* Warm Orange - Secondary */
+    --secondary: 25 90% 55%;
+    --secondary-foreground: 45 100% 98%;
+
+    /* Fresh Green - Accent */
+    --accent: 120 40% 35%;
+    --accent-foreground: 45 100% 98%;
+
+    --muted: 45 30% 90%;
+    --muted-foreground: 25 30% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 38 40% 80%;
+    --input: 38 40% 85%;
+    --ring: 38 92% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Festival Colors */
+    --gold: 45 100% 50%;
+    --saffron: 38 92% 50%;
+    --terracotta: 15 70% 45%;
+    --harvest-green: 95 50% 40%;
+    --cream: 45 100% 97%;
+    --deep-brown: 25 60% 20%;
+
+    /* Gradients */
+    --gradient-sun: linear-gradient(135deg, hsl(45 100% 60%), hsl(38 92% 50%), hsl(25 90% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(45 100% 97%) 0%, hsl(38 60% 92%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(38 92% 50% / 0.1), hsl(25 90% 55% / 0.1));
+
+    /* Shadows */
+    --shadow-warm: 0 4px 20px -5px hsl(38 92% 50% / 0.25);
+    --shadow-card: 0 8px 30px -10px hsl(25 60% 20% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 40% 8%;
+    --foreground: 45 100% 95%;
+
+    --card: 25 35% 12%;
+    --card-foreground: 45 100% 95%;
+
+    --popover: 25 40% 8%;
+    --popover-foreground: 45 100% 95%;
+
+    --primary: 38 92% 55%;
+    --primary-foreground: 25 40% 8%;
+
+    --secondary: 25 80% 50%;
+    --secondary-foreground: 45 100% 95%;
+
+    --accent: 120 35% 45%;
+    --accent-foreground: 45 100% 95%;
+
+    --muted: 25 30% 18%;
+    --muted-foreground: 45 40% 65%;
+
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 45 100% 95%;
+
+    --border: 25 30% 25%;
+    --input: 25 30% 25%;
+    --ring: 38 92% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .text-gradient-sun {
+    background: var(--gradient-sun);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Kolam Pattern Divider */
+  .kolam-divider {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  @keyframes rays {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes steam {
+    0% { opacity: 0; transform: translateY(0) scale(1); }
+    50% { opacity: 0.6; }
+    100% { opacity: 0; transform: translateY(-40px) scale(1.5); }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .animate-rays {
+    animation: rays 30s linear infinite;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+
+  .animate-steam {
+    animation: steam 2s ease-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animation-delay-100 { animation-delay: 0.1s; }
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-300 { animation-delay: 0.3s; }
+  .animation-delay-500 { animation-delay: 0.5s; }
+  .animation-delay-700 { animation-delay: 0.7s; }
+  .animation-delay-1000 { animation-delay: 1s; }
+}
